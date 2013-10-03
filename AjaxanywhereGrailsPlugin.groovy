@@ -21,6 +21,8 @@ import com.nerderg.ajaxanywhere.servlet.StaticResourcesServlet
  * @author Angel Ruiz (aruizca@gmail.com)
  */
 class AjaxanywhereGrailsPlugin {
+    // the plugin group
+    def groupId = 'com.nerderg.grails.plugins'
     // the plugin version
     def version = "2.0-SNAPSHOT"
     // the version or versions of Grails the plugin is designed for
