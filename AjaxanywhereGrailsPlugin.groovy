@@ -21,28 +21,25 @@ import com.nerderg.ajaxanywhere.servlet.StaticResourcesServlet
  * @author Angel Ruiz (aruizca@gmail.com)
  */
 class AjaxanywhereGrailsPlugin {
-    // the plugin group
-    def groupId = 'com.nerderg.grails.plugins'
-    // the plugin version
-    def version = "2.0-SNAPSHOT"
-    // the version or versions of Grails the plugin is designed for
+    def version = "1.0-SNAPSHOT"
     def grailsVersion = "1.3.x > *"
-    // the other plugins this plugin depends on
-    def dependsOn = [:]
-    // resources that are excluded from plugin packaging
     def pluginExcludes = [
-            "grails-app/views/error.gsp"
+        "web-app/WEB-INF/**"
     ]
 
-    def author = "Angel Ruiz Calvo"
-    def authorEmail = "aruizca@gmail.com"
     def title = "AjaxAnywhere Grails Plugin"
     def description = '''\\
 This plugin integrates the <a href="http://www.ajaxanywhere.com" target="_AjaxAnywhere">"AjaxAnywhere (Reloaded) library</a> seamlessly inside the Grails Framework ecosystem.
 '''
 
-    // URL to the plugin's documentation
-    def documentation = "http://grails.org/plugin/ajaxanywhere"
+    def documentation = "http://www.ajaxanywhere.com/"
+    def license = "APACHE"
+    def organization = [ name: "nerdErg Pty. Ltd.", url: "http://www.nerderg.com/" ]
+    def developers = [
+        [ name: "Angel Ruiz", email: "aruizca@gmail.com" ]
+    ]
+    def issueManagement = [ system: "GitHub", url: "https://github.com/nerdErg/AjaxAnywhere-grails-plugin/issues" ]
+    def scm = [ url: "https://github.com/nerdErg/AjaxAnywhere" ]
 
     def doWithWebDescriptor = { webXml ->
 
@@ -93,25 +90,17 @@ This plugin integrates the <a href="http://www.ajaxanywhere.com" target="_AjaxAn
     }
 
     def doWithSpring = {
-        // TODO Implement runtime spring config (optional)
     }
 
     def doWithDynamicMethods = { ctx ->
-        // TODO Implement registering dynamic methods to classes (optional)
     }
 
     def doWithApplicationContext = { applicationContext ->
-        // TODO Implement post initialization spring config (optional)
     }
 
     def onChange = { event ->
-        // TODO Implement code that is executed when any artefact that this plugin is
-        // watching is modified and reloaded. The event contains: event.source,
-        // event.application, event.manager, event.ctx, and event.plugin.
     }
 
     def onConfigChange = { event ->
-        // TODO Implement code that is executed when the project configuration changes.
-        // The event is the same as for 'onChange'.
     }
 }
