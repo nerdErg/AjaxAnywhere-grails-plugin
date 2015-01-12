@@ -13,18 +13,23 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 */
-package ajaxanywhere
+package com.nerderg.ajaxanywhere
 
 /**
  * @author Angel Ruiz (aruizca@gmail.com)
  *
- * This taglib is the Grails equivalent to the Java taglib ZoneTag included in the AjaxAnywhere JAR file.<br/>
+ * This taglib is the Grails equivalent to the Java taglib ZoneTag included in the Aj`axAnywhere JAR file.<br/>
  * We thought this might be more convenient for Grails developers
  */
 class AAZoneTagLib {
 
+    static defaultEncodeAs = [taglib: 'html']
+
     static namespace = "aa"
 
+    /**
+     * @attr id REQUIRED DOM id of the div element that will get updated
+     */
     def zone = { attrs, body ->
         out << "<div id=\"${attrs.id}\" style=\"display:inline;\">"
         out << body()

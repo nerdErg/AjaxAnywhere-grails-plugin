@@ -35,11 +35,13 @@ This plugin integrates the <a href="http://www.ajaxanywhere.com" target="_AjaxAn
     def documentation = "http://www.ajaxanywhere.com/"
     def license = "APACHE"
     def organization = [ name: "nerdErg Pty. Ltd.", url: "http://www.nerderg.com/" ]
+    def author = "Angel Ruiz"
+    def authorEmail = "aruizca@gmail.com"
     def developers = [
         [ name: "Angel Ruiz", email: "aruizca@gmail.com" ]
     ]
     def issueManagement = [ system: "GitHub", url: "https://github.com/nerdErg/AjaxAnywhere-grails-plugin/issues" ]
-    def scm = [ url: "https://github.com/nerdErg/AjaxAnywhere" ]
+    def scm = [ url: "https://github.com/nerdErg/AjaxAnywhere-grails-plugin" ]
 
     def doWithWebDescriptor = { webXml ->
 
