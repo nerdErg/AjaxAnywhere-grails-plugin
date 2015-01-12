@@ -23,8 +23,6 @@ package com.nerderg.ajaxanywhere
  */
 class AAZoneTagLib {
 
-    static defaultEncodeAs = [taglib: 'html']
-
     static namespace = "aa"
 
     /**
