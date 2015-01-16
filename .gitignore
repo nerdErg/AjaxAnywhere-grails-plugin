@@ -48,3 +48,4 @@ ajaxanywhere-grails-plugin-grailsPlugins.iml
 ajaxanywhere-grails-plugin.iml
 atlassian-ide-plugin.xml
 *.iml
+plugin.xml
