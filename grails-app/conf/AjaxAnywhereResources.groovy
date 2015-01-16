@@ -1,8 +1,9 @@
 modules = {
-    AjaxAnywhere {
+
+    ajaxanywhere {
         dependsOn 'jquery'
         
-        resource url:'/js/jquery-aa.js'
+        resource url:'/js/jquery-aa.js', disposition: 'head'
         
     }
     

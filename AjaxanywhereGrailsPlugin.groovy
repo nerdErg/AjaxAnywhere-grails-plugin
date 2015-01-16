@@ -54,9 +54,8 @@ This plugin integrates the <a href="http://www.ajaxanywhere.com" target="_AjaxAn
             }
         }
 
-        def filter = webXml.'filter-mapping'.find {
-            it.'filter-name'.text() == "springSecurityFilterChain"
-        }
+        def filter = webXml.'filter'
+
         filter + {
             'filter-mapping'{
                 'filter-name'('AjaxAnywhere')

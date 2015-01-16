@@ -27,11 +27,13 @@ class AAZoneTagLib {
 
     /**
      * @attr id REQUIRED DOM id of the div element that will get updated
+     * @attr onLoadFragmentUrl url to load the fragment when the page loads
      */
     def zone = { attrs, body ->
-        out << "<div id=\"${attrs.id}\" style=\"display:inline;\">"
+
+        out << "${attrs.onLoadFragmentUrl ? AAUtils.getZoneStartDelimiter(attrs.id, attrs.onLoadFragmentUrl) : AAUtils.getZoneStartDelimiter(attrs.id)}"
         out << body()
-        out << "</div>"
+        out << "${AAUtils.getZoneEndDelimiter(attrs.id)}"
     }
 
 }

@@ -12,27 +12,22 @@ grails.project.dependency.resolution = {
     }
     log "warn" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
     repositories {
-        grailsCentral()
         mavenLocal()
+        grailsCentral()
         mavenCentral()
-        // uncomment the below to enable remote dependency resolution
-        // from public Maven repositories
-        //mavenRepo "http://repository.codehaus.org"
-        //mavenRepo "http://download.java.net/maven/2/"
-        //mavenRepo "http://repository.jboss.com/maven2/"
     }
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
-        compile 'com.nerderg.ajaxanywhere:ajaxanywhere:2.0'
+        compile 'com.nerderg.ajaxanywhere:ajaxanywhere:2.1-SNAPSHOT'
     }
     plugins {
         build(":release:3.0.1",
-                ":rest-client-builder:1.0.3") {
+                ":rest-client-builder:2.0.3") {
             export = false
         }
 
-        runtime ":resources:1.2.8"
-        runtime ":jquery:1.11.1"
+        runtime ":resources:1.2.14"
+//        runtime ":jquery:1.11.1"
         
     }
 }
