@@ -27,13 +27,16 @@ class AAZoneTagLib {
 
     /**
      * @attr id REQUIRED DOM id of the div element that will get updated
-     * @attr fragmentUrl url to load the fragment when the page loads
+     * @attr tag html inline or block element tag to be generated instead of the default 'div' block tag
+     * @attr fragmentUrl url to get content when page is loaded
+     * @attr jsBefore javascript that will get evaluated before the Ajax request
+     * @attr jsAfter javascript that will get evaluated after the successful Ajax request
      */
     def zone = { attrs, body ->
 
-        out << "${attrs.fragmentUrl ? AAUtils.getZoneStartDelimiter(attrs.id, attrs.fragmentUrl, attrs.jsBefore, attrs.jsAfter) : AAUtils.getZoneStartDelimiter(attrs.id)}"
+        out << "${attrs.fragmentUrl ? AAUtils.getZoneStartDelimiter(attrs.id, attrs.tag?: 'div', attrs.fragmentUrl, attrs.jsBefore, attrs.jsAfter) : AAUtils.getZoneStartDelimiter(attrs.id, attrs.tag?: 'div')}"
         out << body()
-        out << "${AAUtils.getZoneEndDelimiter(attrs.id)}"
+        out << "${AAUtils.getZoneEndDelimiter(attrs.id, attrs.tag?: 'div')}"
     }
 
 }
