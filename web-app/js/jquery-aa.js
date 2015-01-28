@@ -223,12 +223,11 @@ $(function () {
         event.preventDefault();
         // Find parent form
         var parentForm = this.form;
-        // Submit Form with AjaxAnywhere attributes
-        AjaxAnywhere.submitAjaxAnywhereForm(parentForm, $(this).attr("aa-refresh-zones"), null, $(this).attr("aa-method"), $(this).attr("js-before"), $(this).attr("js-after"));
+        // Submit Form with cada AjaxAnywhereForm(parentForm, $(this).attr("aa-refresh-zones"), null, $(this).attr("aa-method"), $(this).attr("js-before"), $(this).attr("js-after"));
     });
 
-    // Check for all the AjaxAnywhere enabled links
-    $(document).on("click", "a[aa-refresh-zones]", function(event) {
+    // Check for all the AjaxAnywhere enabled links or elements
+    $(document).on("click", "[aa-refresh-zones]", function(event) {
         event.preventDefault();
         AjaxAnywhere.submitAjaxAnywhereLink($(this).attr("href"), $(this).attr("aa-refresh-zones"), $(this).attr("js-before"), $(this).attr("js-after"));
     });
