@@ -122,9 +122,9 @@ AjaxAnywhere.initParams= function(refreshZones, event) {
  */
 AjaxAnywhere.retrieveTags = function(refreshZones) {
     var zonesArray = refreshZones.split(',');
-    var tagsArray = []
+    var tagsArray = [];
     $.each(zonesArray, function(index, value) {
-        tagsArray.push($('#'+value).prop('tagName'));
+        tagsArray.push($('#'+value).prop('tagName').toLowerCase());
     });
     return tagsArray.join(',');
 };
@@ -156,7 +156,7 @@ AjaxAnywhere.handleSuccessfulRequest = function (response, status, request, jsAf
  */
 AjaxAnywhere.handleError = function(request, status, error) {
     console.log('Error: ' + error);
-    console.log('Status: ' + status);
+    console.log('Status: ' + request.status);
     console.log('Response: ' + request.responseText);
 };
 
