@@ -155,17 +155,9 @@ AjaxAnywhere.handleSuccessfulRequest = function (response, status, request, jsAf
  * @param error
  */
 AjaxAnywhere.handleError = function(request, status, error) {
-    var details = confirm("AjaxAnywhere default error handler. XMLHttpRequest HTTP Error code:" + status + " \n\n Would you like to view the response content in a new window?");
-    if (details) {
-        var win = window.open("", this.id + "_debug_window");
-        if (win != null) {
-            win.document.write("<html><body><xmp>" + request.responseText);
-            win.document.close();
-            win.focus();
-        } else {
-            alert("Please, disable your pop-up blocker for this site first.");
-        }
-    }
+    console.log('Error: ' + error);
+    console.log('Status: ' + status);
+    console.log('Response: ' + request.responseText);
 };
 
 /**
