@@ -3,7 +3,7 @@ modules = {
     ajaxanywhere {
         dependsOn 'jquery'
         
-        resource url:'/js/jquery-aa.js'
+        resource url:[plugin: 'ajaxanywhere', dir: 'js',file:'jquery-aa.js']
         
     }
     
