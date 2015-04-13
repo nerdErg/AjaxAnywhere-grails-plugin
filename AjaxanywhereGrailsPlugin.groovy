@@ -69,25 +69,6 @@ This plugin integrates the <a href="http://www.ajaxanywhere.com" target="_AjaxAn
                 'listener-class'(JulToSlf4jBridgeListener.name)
             }
         }
-
-        // AjaxAnywhere static resource servlet mapping
-        def servletElements = webXml.'servlet'
-        def lastServletDefinition = servletElements[servletElements.size() - 1]
-        lastServletDefinition + {
-            'servlet' {
-                'servlet-name'("AAResourcesServlet")
-                'servlet-class'(StaticResourcesServlet.name)
-            }
-        }
-
-        def servletMappingElement = webXml.'servlet-mapping'
-        def lastMapping = servletMappingElement[servletMappingElement.size() - 1]
-        lastMapping + {
-            'servlet-mapping' {
-                'servlet-name'("AAResourcesServlet")
-                'url-pattern'("/js/jquery-aa.js")
-            }
-        }
     }
 
     def doWithSpring = {
