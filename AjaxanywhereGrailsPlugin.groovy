@@ -15,7 +15,6 @@
 */
 import com.nerderg.ajaxanywhere.AAFilter
 import com.nerderg.ajaxanywhere.listener.JulToSlf4jBridgeListener
-import com.nerderg.ajaxanywhere.servlet.StaticResourcesServlet
 
 /**
  * @author Angel Ruiz (aruizca@gmail.com)
@@ -42,21 +41,20 @@ This plugin integrates the <a href="http://www.ajaxanywhere.com" target="_AjaxAn
     ]
     def issueManagement = [ system: "GitHub", url: "https://github.com/nerdErg/AjaxAnywhere-grails-plugin/issues" ]
     def scm = [ url: "https://github.com/nerdErg/AjaxAnywhere-grails-plugin" ]
-
+    def loadAfter = ['resources']
     def doWithWebDescriptor = { webXml ->
 
         // AjaxAnywhere filter mapping
-        def contextParam = webXml.'context-param'
-        contextParam[contextParam.size() - 1] + {
+        def filters = webXml.filter[0]
+        filters + {
             'filter' {
                 'filter-name'('AjaxAnywhere')
                 'filter-class'(AAFilter.name)
             }
         }
 
-        def filter = webXml.'filter'
-
-        filter + {
+        filters = webXml.filter
+        filters[filters.size() -1 ] + {
             'filter-mapping'{
                 'filter-name'('AjaxAnywhere')
                 'url-pattern'('/*')
@@ -64,6 +62,7 @@ This plugin integrates the <a href="http://www.ajaxanywhere.com" target="_AjaxAn
         }
 
         // Register listener to bridge AjaxAnywhere JUL based traces to SLF4J
+        def contextParam = webXml.'context-param'
         contextParam[contextParam.size() - 1] + {
             'listener' {
                 'listener-class'(JulToSlf4jBridgeListener.name)
