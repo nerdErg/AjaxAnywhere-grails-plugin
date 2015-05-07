@@ -21,7 +21,7 @@ grails.project.dependency.resolution = {
     }
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
-        compile 'com.nerderg.ajaxanywhere:ajaxanywhere:2.1-SNAPSHOT'
+        compile 'com.nerderg.ajaxanywhere:ajaxanywhere:2.1'
     }
     plugins {
         build(":release:3.0.1",
@@ -30,7 +30,5 @@ grails.project.dependency.resolution = {
         }
 
         runtime ":resources:1.2.14"
-//        runtime ":jquery:1.11.1"
-        
     }
 }

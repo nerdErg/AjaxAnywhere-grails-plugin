@@ -31,7 +31,7 @@ class AjaxanywhereGrailsPlugin {
 This plugin integrates the <a href="http://www.ajaxanywhere.com" target="_AjaxAnywhere">"AjaxAnywhere (Reloaded) library</a> seamlessly inside the Grails Framework ecosystem.
 '''
 
-    def documentation = "http://www.ajaxanywhere.com/"
+    def documentation = "http://ajaxanywhere.com/documentation.html"
     def license = "APACHE"
     def organization = [ name: "nerdErg Pty. Ltd.", url: "http://www.nerderg.com/" ]
     def author = "Angel Ruiz"
