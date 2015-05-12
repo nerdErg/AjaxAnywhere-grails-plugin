@@ -16,10 +16,10 @@
 package com.nerderg.ajaxanywhere
 
 /**
- * @author Angel Ruiz (aruizca@gmail.com)
+ * The Grails equivalent to the Java taglib ZoneTag included in the AjaxAnywhere JAR file.<br/>
+ * We thought this might be more convenient for Grails developers.
  *
- * This taglib is the Grails equivalent to the Java taglib ZoneTag included in the Aj`axAnywhere JAR file.<br/>
- * We thought this might be more convenient for Grails developers
+ * @author Angel Ruiz (aruizca@gmail.com)
  */
 class AAZoneTagLib {
 
@@ -35,15 +35,9 @@ class AAZoneTagLib {
      */
     def zone = { attrs, body ->
         // TODO Remove fragmentUrl attr next version
-        if (attrs.fragmentUrl) {
-            out << "${attrs.fragmentUrl ? AAUtils.getZoneStartDelimiter(attrs.id, attrs.tag?: 'div', attrs.fragmentUrl, attrs.jsBefore, attrs.jsAfter) : AAUtils.getZoneStartDelimiter(attrs.id, attrs.tag?: 'div')}"
-        } else {
-            out << "${attrs.href ? AAUtils.getZoneStartDelimiter(attrs.id, attrs.tag?: 'div', attrs.href, attrs.jsBefore, attrs.jsAfter) : AAUtils.getZoneStartDelimiter(attrs.id, attrs.tag?: 'div')}"
-        }
-
-
+        String hrefOrFragmentUrl = attrs.fragmentUrl ?: attrs.href
+        out << "${hrefOrFragmentUrl ? AAUtils.getZoneStartDelimiter(attrs.id, attrs.tag?: 'div', hrefOrFragmentUrl, attrs.jsBefore, attrs.jsAfter) : AAUtils.getZoneStartDelimiter(attrs.id, attrs.tag?: 'div')}"
         out << body()
-        out << "${AAUtils.getZoneEndDelimiter(attrs.id, attrs.tag?: 'div')}"
+        out << AAUtils.getZoneEndDelimiter(attrs.id, attrs.tag?: 'div')
     }
-
 }
