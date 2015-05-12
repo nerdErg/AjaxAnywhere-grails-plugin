@@ -20,7 +20,7 @@ import com.nerderg.ajaxanywhere.listener.JulToSlf4jBridgeListener
  * @author Angel Ruiz (aruizca@gmail.com)
  */
 class AjaxanywhereGrailsPlugin {
-    def version = "1.0-SNAPSHOT"
+    def version = "1.0"
     def grailsVersion = "1.3.x > *"
     def title = "AjaxAnywhere Grails Plugin"
     def description = 'Integrates the <a href="http://www.ajaxanywhere.com" target="_AjaxAnywhere">"AjaxAnywhere (Reloaded) library</a> seamlessly.'
