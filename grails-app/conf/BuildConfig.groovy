@@ -10,14 +10,10 @@ grails.project.dependency.resolution = {
         mavenLocal()
         grailsCentral()
         mavenCentral()
-
-        mavenRepo("http://nexus.ala.org.au/content/groups/public/") {
-            updatePolicy 'always'
-        }
     }
 
     dependencies {
-        compile 'com.nerderg.ajaxanywhere:ajaxanywhere:2.1'
+        compile 'com.nerderg.ajaxanywhere:ajaxanywhere:2.1.1'
     }
 
     plugins {
